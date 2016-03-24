@@ -155,7 +155,7 @@ void run_out(LADSPA_Handle instance, unsigned long count) {
 #endif
       o->addr = lo_address_new(addr, port);
       if(lo_address_errno(o->addr) != 0) {
-	fprintf(stderr, "osc_out: connection error: %s\n",
+	fprintf(stderr, "osc_out: connection error: %d\n",
 		lo_address_errno(o->addr));
       }
       o->connect_state  = 1;
