@@ -1,11 +1,12 @@
 This is ladosc, a set of plugins for linux audio composition.
 
+This project is imported from google code, the relevant parts of the legacy
+README are copied below.
+
+================================================================================
+
 Please see the COPYING file, for details about your right to copy, modify,
 distribute, or sell copies of this program.
-
-Up to date versions of the software should be available at
-http://code.google.com/p/noisesmith-linux-audio/
-This is also the appropriate place to report bugs, accolades, or complaints.
 
 TO INSTALL:
 
