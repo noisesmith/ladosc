@@ -1,0 +1,27 @@
+This is ladosc, a set of plugins for linux audio composition.
+
+Please see the COPYING file, for details about your right to copy, modify,
+distribute, or sell copies of this program.
+
+Up to date versions of the software should be available at
+http://code.google.com/p/noisesmith-linux-audio/
+This is also the appropriate place to report bugs, accolades, or complaints.
+
+TO INSTALL:
+
+If you are running ubuntu gutsy, you should be able to copy the op.so
+and osc.so files from src/ into a directory that is in your
+LADSPA_PATH and proceed on with looking at the documentation in your
+favorite html browser.
+
+Otherwise, you need to build from source.
+
+If you are building from source:
+
+You will need: The ladspa.h header file, and the liblo library.
+
+Edit src/Makefile for the location of your liblo.a static library, and
+the directory where you want to install the plugins (the defaults
+should work for a majority of users).
+
+In the src/ directory, run make. Install is the default target.
