@@ -2,17 +2,17 @@
   this file is a part of ladosc, which in turn is a part of the noisesmith
   package: <http://code.google.com/p/noisesmith-linux-audio/>
   Copyright (C) 2008  Justin Smith
-  
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -90,11 +90,11 @@ LADSPA_Descriptor plus = {
   maker,   copyright, 3,        binary_control_desc, plus_ports,
   /* PortRangeHints  ImplementationData instantiate connect_port    activate */
   binary_control_hints, NULL,           make_op,    connect_port_op, NULL,
-  /* run      run_adding set_run_adding_gain deactivate cleanup */ 
+  /* run      run_adding set_run_adding_gain deactivate cleanup */
   run_plus, NULL,      NULL,               NULL,      cleanup_op
 };
 
-/*               */ 
+/*               */
 /* reverse minus */
 /*               */
 void run_rminus(LADSPA_Handle instance, unsigned long count) {
@@ -109,7 +109,7 @@ LADSPA_Descriptor rminus = {
   maker,   copyright, 3,        binary_control_desc, rminus_ports,
   /* PortRangeHints ImplementationData instantiate connect_port    activate */
   binary_control_hints, NULL,          make_op,    connect_port_op, NULL,
-  /* run      run_adding set_run_adding_gain deactivate cleanup */ 
+  /* run      run_adding set_run_adding_gain deactivate cleanup */
   run_rminus, NULL,      NULL,               NULL,      cleanup_op
 };
 
@@ -128,7 +128,7 @@ LADSPA_Descriptor minus = {
   maker,   copyright, 3,        binary_control_desc, minus_ports,
   /* PortRangeHints ImplementationData instantiate connect_port    activate */
   binary_control_hints, NULL,          make_op,    connect_port_op, NULL,
-  /* run      run_adding set_run_adding_gain deactivate cleanup */ 
+  /* run      run_adding set_run_adding_gain deactivate cleanup */
   run_minus, NULL,      NULL,               NULL,      cleanup_op
 };
 
@@ -365,27 +365,26 @@ LADSPA_Descriptor logior = {
   make_op, connect_port_op, NULL, run_logior, NULL, NULL, NULL, cleanup_op
 };
 
-/* control constructs */
+control constructs
 
-/*        */
-/* spigot */
-/*        */
-/* const LADSPA_PortRangeHint spigot_hints[] = */
-/*   {{LADSPA_HINT_TOGGLED, 0.0, 1.0}, */
-/*    {0, 0.0, 0.0}, */
-/*    {0, 0.0, 0.0}}; */
-/* void run_spigot(LADSPA_Handle instance, unsigned long count) { */
-/*   struct op *o = (struct op *)instance; */
-/*   if(!fpzero(*o->ports[0])) { */
-/*     *o->ports[2] = *o->ports[1]; */
-/*   } */
-/* } */
-/* const char *spigot_ports[] = {"on/off", "in", "out"}; */
-/* LADSPA_Descriptor spigot = { */
-/*   id_start+18, "spigot", properties, "spigot (c, c) -> c", maker, copyright, 3, */
-/*   binary_control_desc, spigot_ports, spigot_hints, NULL, make_op, */
-/*   connect_port_op, NULL, run_spigot, NULL, NULL, NULL, cleanup_op */
-/* }; */
+spigot
+
+ const LADSPA_PortRangeHint spigot_hints[] =
+ {{LADSPA_HINT_TOGGLED, 0.0, 1.0},
+   {0, 0.0, 0.0},
+   {0, 0.0, 0.0}};
+void run_spigot(LADSPA_Handle instance, unsigned long count) {
+  struct op *o = (struct op *)instance;
+  if(!fpzero(*o->ports[0])) {
+    *o->ports[2] = *o->ports[1];
+  }
+}
+const char *spigot_ports[] = {"on/off", "in", "out"};
+LADSPA_Descriptor spigot = {
+  id_start+18, "spigot", properties, "spigot (c, c) -> c", maker, copyright, 3,
+  binary_control_desc, spigot_ports, spigot_hints, NULL, make_op,
+  connect_port_op, NULL, run_spigot, NULL, NULL, NULL, cleanup_op
+};
 
 /*        */
 /* switch */
