@@ -231,26 +231,6 @@ LADSPA_Handle make_in(const LADSPA_Descriptor *descriptor,
   if(new == NULL) {
     return NULL;
   }
-  /* made redundant by calloc above */
-/*   new->thread = NULL; */
-/*   new->connect_state = 0; */
-/*   new->status = NULL; */
-/*   new->output[0] = NULL; */
-/*   new->output[1] = NULL; */
-/*   new->output[2] = NULL; */
-/*   new->output[3] = NULL; */
-/*   new->output[4] = NULL; */
-/*   new->output[5] = NULL; */
-/*   new->output[6] = NULL; */
-/*   new->output[7] = NULL; */
-/*   new->output[8] = NULL; */
-/*   new->output[9] = NULL; */
-/*   new->output[10] = NULL; */
-/*   new->output[11] = NULL; */
-/*   new->output[12] = NULL; */
-/*   new->output[13] = NULL; */
-/*   new->output[14] = NULL; */
-/*   new->output[15] = NULL; */
   return new;
 }
 
