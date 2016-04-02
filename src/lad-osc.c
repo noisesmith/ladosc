@@ -192,18 +192,30 @@ void run_out(LADSPA_Handle instance, unsigned long count) {
     }
   }
 }
-      
+
 
 const char *out_ports[] = {"input", "index", "connect", "port", "octet_1",
 			   "octet_2", "octet_3", "octet_4", "status"};
 LADSPA_Descriptor out = {
- UniqueID: id_start, Label: "osc_out", Properties: properties,
- Name: "osc output",  Maker: maker, Copyright: copyright, PortCount: 9,
- PortDescriptors: out_desc, PortNames: out_ports, PortRangeHints: out_hints,
- ImplementationData: NULL, instantiate: make_out,
- connect_port:  connect_port_out, activate: NULL, run: run_out,
- run_adding: NULL, set_run_adding_gain: NULL, deactivate: NULL,
- cleanup: cleanup_out
+ .UniqueID = id_start,
+ .Label = "osc_out",
+ .Properties = properties,
+ .Name = "osc output",
+ .Maker = maker,
+ .Copyright = copyright,
+ .PortCount = 9,
+ .PortDescriptors = out_desc,
+ .PortNames = out_ports,
+ .PortRangeHints = out_hints,
+ .ImplementationData = NULL,
+ .instantiate = make_out,
+ .connect_port =  connect_port_out,
+ .activate = NULL,
+ .run = run_out,
+ .run_adding = NULL,
+ .set_run_adding_gain = NULL,
+ .deactivate = NULL,
+ .cleanup = cleanup_out
 };
 
 
@@ -218,7 +230,7 @@ LADSPA_Descriptor out = {
 struct in {
   LADSPA_Data *index_start;
   LADSPA_Data *output[16];
-   LADSPA_Data *connect;
+  LADSPA_Data *connect;
   LADSPA_Data *port;
   LADSPA_Data *status;
   lo_server_thread thread;
@@ -368,12 +380,25 @@ const char *in_ports[] = {"index_start", "out_0", "out_1", "out_2", "out_3",
 			  "out_10", "out_11", "out_12", "out_13", "out_14",
 			  "out_15", "connect", "port", "status", "bug"};
 LADSPA_Descriptor in = {
-  UniqueID: id_start+1, Label: "osc_in", Properties: properties,
-  Name: "osc input", Maker: maker,   Copyright: copyright, PortCount: 20,
-  PortDescriptors: in_desc, PortNames: in_ports, PortRangeHints: in_hints,
-  ImplementationData: NULL, instantiate: make_in,
-  connect_port: connect_port_in, activate: NULL, run: run_in, run_adding: NULL,
-  set_run_adding_gain: NULL, deactivate: NULL, cleanup: cleanup_in
+  .UniqueID = id_start+1,
+  .Label = "osc_in",
+  .Properties = properties,
+  .Name = "osc input",
+  .Maker = maker,
+  .Copyright = copyright,
+  .PortCount = 20,
+  .PortDescriptors = in_desc,
+  .PortNames = in_ports,
+  .PortRangeHints = in_hints,
+  .ImplementationData = NULL,
+  .instantiate = make_in,
+  .connect_port = connect_port_in,
+  .activate = NULL,
+  .run = run_in,
+  .run_adding = NULL,
+  .set_run_adding_gain = NULL,
+  .deactivate = NULL,
+  .cleanup = cleanup_in
 };
 
 const LADSPA_Descriptor *ladspa_descriptor(unsigned long index) {

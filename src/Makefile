@@ -4,7 +4,8 @@ DESTINATION_DIR=~/.ladspa
 
 LO_CFLAGS=`pkg-config --cflags liblo`
 LO_LIBS=`pkg-config --libs liblo` -lm
-LADSPA=-I/users/justinsmith/ardour/libs/ardour/ardour/
+OSX_LADSPA=-I${ARDOUR}/libs/ardour/ardour/
+LADSPA=${OSX_LADSPA}
 
 LINUX_LD=-shared
 OSX_LD=-dylib
