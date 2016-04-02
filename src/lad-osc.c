@@ -17,7 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <ladspa.h>
+#include "ladspa.h"
 #include <stdlib.h>
 #include <lo/lo.h>
 #include <string.h>

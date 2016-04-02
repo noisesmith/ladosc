@@ -19,7 +19,7 @@
 
 #define  _ISOC99_SOURCE
 
-#include <ladspa.h>
+#include "ladspa.h"
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
